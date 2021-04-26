@@ -28,9 +28,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
-    - name: cd..
-      run: cd ..
     - name: npm install
-      run: npm install
-    - name: npm run test
+      run: cd.. && npm install
+    - name: cd.. && npm run test
       run: npm run test
